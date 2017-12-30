@@ -1,7 +1,6 @@
 import React from 'react';
 import { ChromePicker } from 'react-color';
 import './ColorPicker.css';
-import ColorSwatch from '../ColorSwatch/ColorSwatch';
 
 
 const ColorPicker = (props) => {
@@ -10,12 +9,14 @@ const ColorPicker = (props) => {
       <p>
         Click to pick a color
       </p>
-      <ColorSwatch
-        color={props.color}
-        toggleColorPicker={props.toggleColorPicker}/>
+      <div
+        className="colorSwatch"
+        onClick={props.toggleColorPicker}
+        style={{backgroundColor: props.color}} />
       {props.showPicker ?
         <div className="popup">
           <div
+            className="closePopup"
             style={{position: 'fixed', top: 0, right: 0, bottom: 0, left: 0}}
             onClick={props.closePicker}/>
           <ChromePicker

@@ -1,7 +1,19 @@
+@import '../../../styles/_mixins.scss';
+
 .colorPicker {
   margin-top: 20px;
   p {
     text-align: center;
+  }
+  .colorSwatch {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    @include round(50px);
+    cursor: pointer;
+    &:hover {
+      @include boxshadow;
+    }
   }
   .popup {
     zindex: 2;
