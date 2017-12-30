@@ -1,0 +1,74 @@
+//*============ TABLES ============*/
+	table {
+		margin: 20px 0;
+		border-collapse: separate;
+		border-spacing: 0;
+		th, td {
+			padding: 10px 15px;
+			vertical-align: middle;
+		}
+		td {
+			border-bottom: 1px solid $main;
+			border-right: 1px solid $main;
+			&:first-child {
+				border-left: 1px solid $main;
+			}
+		}
+		caption {
+			margin-bottom: 10px;
+			font-size: 140%;
+		}
+		thead {
+			background-color: $main;
+			background: linear-gradient(lighten($main, 20%), $main);
+			color: white;
+			font-size: 130%;
+			th {
+				padding: 15px 0;
+				&:first-child {
+					border-top-left-radius: 5px;
+				}
+				&:last-child {
+					border-top-right-radius: 5px;
+				}
+			}
+		}
+		tbody {
+			tr:nth-child(even) {
+				background-color: lighten($main, 30%);
+			}
+			td:first-child {
+				font-weight: bold;
+			}
+			td:last-child {
+				text-align: right;
+			}
+			tr:last-child {
+				td {
+					&:first-child {
+						border-bottom-left-radius: 5px;
+						text-align: right;
+					}
+					&:last-child {
+						border-bottom-right-radius: 5px;
+					}
+				}
+			}
+			// Take this out if you don't want a "footer" row at the end of the body
+			tr:last-child {
+				background-color: lighten(gray, 35%);
+				td {
+					border-top: 2px solid $main;
+				}
+			}
+		}
+		tfoot {
+			td {
+				border: none;
+				&:first-child {
+					border: none;
+				}
+			}
+		}
+	}
+//*============ END TABLES ============*/

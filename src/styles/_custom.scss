@@ -1,0 +1,98 @@
+//*============ MAIN PAGE ELEMENTS ============*/
+	body {
+		position:relative;
+		margin: 0;
+		padding: 0;
+		font-size: 100%;
+	}
+
+	#wrapper {
+		margin: 0 auto;
+		width: 90%;
+		max-width: 940px;
+	}
+
+	.clear {
+		clear: both;
+	}
+//*============ END MAIN PAGE ELEMENTS ============*/
+
+//*============ HEADER ============*/
+	header {
+		position: relative;
+		padding: 20px;
+		@include boxshadow;
+		h1 {
+			font: {
+				size: 2em;
+				color: $text;
+			}
+		}
+		ul {
+			position: relative;
+			margin-top: 7px;
+			li {
+				display: inline;
+				a {
+					color: $text;
+					text-decoration: none;
+					&:hover {
+						text-decoration: none;
+						color: $accent;
+					}
+					&.active {
+						color: $main;
+					}
+				}
+				&:not(:first-child) {
+					&::before {
+						content: " | ";
+						color: $text;
+					}
+				}
+			}
+		}
+	}
+//*============ END HEADER ============*/
+
+//*============CONTENT============*/
+	#content {
+		margin-bottom: 20px;
+		h2 {
+			margin: 20px 0;
+			font-size: 170%;
+			border-bottom: 1px solid $main;
+		}
+		h3 {
+			margin-bottom: 10px;
+			font-size: 150%;
+		}
+	}
+//*============END CONTENT============*/
+
+//*============ FOOTER ============*/
+	footer {
+		padding: 15px;
+		background-color: $main;
+		color: white;
+		clear: both;
+		ul {
+			text-align: center;
+			li {
+				display: inline;
+				&:not(:first-child) {
+					&::before {
+						content: " | ";
+						color: $text;
+					}
+				}
+			}
+		}
+		a, a:visited {
+			color: white;
+			text-decoration: underline;
+			&:hover, &:focus, &:active {
+			}
+		}
+	}
+//*============ END FOOTER ============*/
