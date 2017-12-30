@@ -21,6 +21,7 @@
 	header {
 		position: relative;
 		padding: 20px;
+		color: $text;
 		@include boxshadow;
 		h1 {
 			font: {
@@ -72,27 +73,22 @@
 
 //*============ FOOTER ============*/
 	footer {
-		padding: 15px;
-		background-color: $main;
-		color: white;
-		clear: both;
-		ul {
-			text-align: center;
-			li {
-				display: inline;
+	  border-top: 1px solid $main;
+	  margin-bottom: 30px;
+	  padding-top: 10px;
+	  text-align: center;
+	  clear: both;
+		color: $text;
+	  ul {
+	    li {
+	      display: inline;
 				&:not(:first-child) {
 					&::before {
 						content: " | ";
 						color: $text;
 					}
 				}
-			}
-		}
-		a, a:visited {
-			color: white;
-			text-decoration: underline;
-			&:hover, &:focus, &:active {
-			}
-		}
+	    }
+	  }
 	}
 //*============ END FOOTER ============*/
