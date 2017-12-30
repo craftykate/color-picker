@@ -22,6 +22,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # CSS files
-src/*.css
-src/Components/**/.css
-src/styles/*.css
+*.css

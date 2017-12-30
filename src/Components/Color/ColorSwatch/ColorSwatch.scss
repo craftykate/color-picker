@@ -1,0 +1,13 @@
+@import '../../../styles/_mixins.scss';
+@import "../../../styles/_colors.scss";
+
+.colorSwatch {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  @include round(50px);
+  cursor: pointer;
+  &:hover {
+    @include boxshadow;
+  }
+}
