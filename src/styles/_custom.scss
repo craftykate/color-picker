@@ -68,7 +68,6 @@
 	  width: 45%;
 	  margin-right: 10%;
 	  .color1, .color2 {
-	    position: relative;
 	    width: 100%;
 	    height: 100px;
 	    margin-bottom: 10px;
@@ -78,14 +77,12 @@
 	  display: inline-block;
 	  width: 45%;
 	  .color1 {
-	    position: relative;
 	    width: 100%;
 	    height: 100px;
 	    margin-bottom: 10px;
 	  }
 	  .color2, .color3 {
 	    float: left;
-	    position: relative;
 	    width: 48%;
 	    height: 100px;
 	    margin-bottom: 10px;
@@ -97,7 +94,6 @@
 	.colorBlock {
 		.hex {
 			display: none;
-			position: absolute;
 			background-color: white;
 			top: 30%;
 			left: 10%;

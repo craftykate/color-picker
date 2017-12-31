@@ -14,7 +14,8 @@ const ColorPicker = (props) => {
         onClick={props.toggleColorPicker}
         style={{backgroundColor: props.color}} />
       {props.showPicker ?
-        <div className="popup">
+        <div
+          className="popup">
           <div
             className="closePopup"
             style={{position: 'fixed', top: 0, right: 0, bottom: 0, left: 0}}
