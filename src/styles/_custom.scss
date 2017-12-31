@@ -21,36 +21,10 @@
 	header {
 		position: relative;
 		padding: 20px;
-		color: $text;
 		@include boxshadow;
 		h1 {
 			font: {
 				size: 2em;
-				color: $text;
-			}
-		}
-		ul {
-			position: relative;
-			margin-top: 7px;
-			li {
-				display: inline;
-				a {
-					color: $text;
-					text-decoration: none;
-					&:hover {
-						text-decoration: none;
-						color: $accent;
-					}
-					&.active {
-						color: $main;
-					}
-				}
-				&:not(:first-child) {
-					&::before {
-						content: " | ";
-						color: $text;
-					}
-				}
 			}
 		}
 	}
@@ -60,7 +34,6 @@
 	h2 {
 		text-align: center;
 		font-size: 130%;
-		color: $text;
 		margin-bottom: 5px;
 	}
 	.colorCombo {
@@ -116,7 +89,6 @@
 	  padding-top: 10px;
 	  text-align: center;
 	  clear: both;
-		color: $text;
 	  ul {
 	    li {
 	      display: inline;
