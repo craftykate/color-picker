@@ -1,17 +1,19 @@
 import React from 'react';
-import './ComplimentaryColor.css';
+import ColorSwatch from '../ColorSwatch/ColorSwatch';
 
 
-const ComplimentaryColor = (props) => (
-  <div className="complimentary">
-    <p>Complimentary Colors</p>
-    <div
-      className="color1"
-      style={{backgroundColor: props.color}}/>
-    <div
-      className="color2"
-      style={{backgroundColor: props.compColor}}/>
-  </div>
-)
+const ComplimentaryColor = (props) => {
+  return (
+    <div className="complimentary">
+      <h2>Complimentary Colors</h2>
+      <ColorSwatch
+        class="color1"
+        color={props.color} />
+      <ColorSwatch
+        class="color2"
+        color={props.compColor} />
+    </div>
+  )
+}
 
 export default ComplimentaryColor;

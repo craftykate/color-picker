@@ -1,18 +1,19 @@
 import React from 'react';
-import './SplitComplimentaryColors.css'
+import ColorSwatch from '../ColorSwatch/ColorSwatch';
 
 
 const SplitComplimentaryColors = (props) => (
   <div className="splitComp">
-    <p>Split Complimentary Colors</p>
-    <div
-      className="color1"
-      style={{backgroundColor: props.color}} />
-    <div
-      className="color2"
-      style={{backgroundColor: props.split1}} />
-    <div className="color3"
-      style={{backgroundColor: props.split2}} />
+    <h2>Split Complimentary Colors</h2>
+    <ColorSwatch
+      class="color1"
+      color={props.color} />
+    <ColorSwatch
+      class="color2"
+      color={props.split1} />
+    <ColorSwatch
+      class="color3"
+      color={props.split2} />
   </div>
 )
 

@@ -57,18 +57,63 @@
 //*============ END HEADER ============*/
 
 //*============CONTENT============*/
-	#content {
-		margin-bottom: 20px;
-		h2 {
-			margin: 20px 0;
-			font-size: 170%;
-			border-bottom: 1px solid $main;
+	h2 {
+		text-align: center;
+		font-size: 130%;
+		color: $text;
+		margin-bottom: 5px;
+	}
+	.complimentary {
+	  display: inline-block;
+	  width: 45%;
+	  margin-right: 10%;
+	  .color1, .color2 {
+	    position: relative;
+	    width: 100%;
+	    height: 100px;
+	    margin-bottom: 10px;
+	  }
+	}
+	.splitComp {
+	  display: inline-block;
+	  width: 45%;
+	  .color1 {
+	    position: relative;
+	    width: 100%;
+	    height: 100px;
+	    margin-bottom: 10px;
+	  }
+	  .color2, .color3 {
+	    float: left;
+	    position: relative;
+	    width: 48%;
+	    height: 100px;
+	    margin-bottom: 10px;
+	  }
+	  .color2 {
+	    margin-right: 4%;
+	  }
+	}
+	.colorBlock {
+		.hex {
+			display: none;
+			position: absolute;
+			background-color: white;
+			top: 30%;
+			left: 10%;
+			@include round;
+			p {
+				margin: 0;
+				padding: 10px;
+			}
 		}
-		h3 {
-			margin-bottom: 10px;
-			font-size: 150%;
+		&:hover {
+			.hex {
+				display: block;
+			}
 		}
 	}
+
 //*============END CONTENT============*/
 
 //*============ FOOTER ============*/
