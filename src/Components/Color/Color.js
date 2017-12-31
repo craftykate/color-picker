@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import ColorPicker from './ColorPicker/ColorPicker';
 import ComplimentaryColor from'./ComplimentaryColor/ComplimentaryColor';
+import SplitComplimentaryColors from'./SplitComplimentaryColors/SplitComplimentaryColors';
 
 
 class Color extends Component {
   constructor(props) {
     super(props);
     const color = '#ffae4e';
-    const compColor = this.hexToComplimentary(color);
+    const compColor = this.convertHex(color, 'comp');
+    const split1 = this.convertHex(color, 'split1');
+    const split2 = this.convertHex(color, 'split2');
     this.state = {
       showPicker: false,
       color: color,
-      compColor: compColor
+      compColor: compColor,
+      split1: split1,
+      split2: split2
     }
   }
 
@@ -27,7 +32,9 @@ class Color extends Component {
   handleChangeColor = (color) => {
     this.setState({
       color: color.hex,
-      compColor: this.hexToComplimentary(color.hex)
+      compColor: this.convertHex(color.hex, 'comp'),
+      split1: this.convertHex(color.hex, 'split1'),
+      split2: this.convertHex(color.hex, 'split2')
     })
   }
 
@@ -37,13 +44,8 @@ class Color extends Component {
     })
   }
 
-  /* hexToComplimentary : Converts hex value to HSL, shifts
-   * hue by 180 degrees and then converts hex, giving complimentary color
-   * as a hex value
-   * @param  [String] hex : hex value
-   * @return [String] : complimentary color as hex value
-   */
-  hexToComplimentary(hex){
+  // Adapted thanks to Edd https://stackoverflow.com/a/37657940/1965441
+  convertHex(hex, whichColor){
 
       // Convert hex to rgb
       // Credit to Denis http://stackoverflow.com/a/36253499/4939630
@@ -83,7 +85,10 @@ class Color extends Component {
       h = h / 6.2832 * 360.0 + 0;
 
       // Shift hue to opposite side of wheel and convert to [0-1] value
-      h+= 180;
+      if (whichColor === 'comp') h+= 180;;
+      if (whichColor === 'split1') h+= 160;
+      if (whichColor === 'split2') h+= 200;
+
       if (h > 360) { h -= 360; }
       h /= 360;
 
@@ -118,6 +123,22 @@ class Color extends Component {
       return "#" + (0x1000000 | rgb).toString(16).substring(1);
   }
 
+  getComplimentary(h) {
+    // Shift hue to opposite side of wheel and convert to [0-1] value
+    h+= 180;
+    if (h > 360) { h -= 360; }
+    h /= 360;
+    return h
+  }
+
+  get1stSplit(h) {
+    // Shift hue to opposite side of wheel and convert to [0-1] value
+    h+= 160;
+    if (h > 360) { h -= 360; }
+    h /= 360;
+    return h
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -130,6 +151,10 @@ class Color extends Component {
         <ComplimentaryColor
           color={this.state.color}
           compColor={this.state.compColor}/>
+        <SplitComplimentaryColors
+          color={this.state.color}
+          split1={this.state.split1}
+          split2={this.state.split2}/>
       </React.Fragment>
     )
   }
