@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import colorCalculator from '../../utils/ColorCalculator';
 
 import ColorPicker from './ColorPicker/ColorPicker';
-import ComplimentaryColor from'./ComplimentaryColor/ComplimentaryColor';
-import SplitComplimentaryColors from'./SplitComplimentaryColors/SplitComplimentaryColors';
+import ColorCombo from './ColorCombo/ColorCombo';
 import SavedColors from './SavedColors/SavedColors';
 
 
@@ -67,6 +66,12 @@ class Color extends Component {
     })
   }
 
+  handleClearSaved = () => {
+    this.setState({
+      savedColors: []
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -77,20 +82,22 @@ class Color extends Component {
           changeColor={this.handleChangeColor}
           closePicker={this.handleClosePicker}
           saveColor={this.handleSaveColor}/>
-        <ComplimentaryColor
-          color={this.state.color}
-          compColor={this.state.compColor}
+        <ColorCombo
+          name="Complimentary Colors"
+          marginRight={true}
+          colors={[this.state.color, this.state.compColor]}
           updateColor={this.handleUpdateColor}
-          hexClick={this.handleHexClick}/>
-        <SplitComplimentaryColors
-          color={this.state.color}
-          split1={this.state.split1}
-          split2={this.state.split2}
+          hexClick={this.handleHexClick} />
+        <ColorCombo
+          name="Split Complimentary Colors"
+          marginRight={false}
+          colors={[this.state.color, this.state.split1, this.state.split2]}
           updateColor={this.handleUpdateColor}
-          hexClick={this.handleHexClick}/>
+          hexClick={this.handleHexClick} />
         <SavedColors
           savedColors={this.state.savedColors}
-          updateColor={this.handleUpdateColor}/>
+          updateColor={this.handleUpdateColor}
+          clearSaved={this.handleClearSaved}/>
       </React.Fragment>
     )
   }

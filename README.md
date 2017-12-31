@@ -22,4 +22,4 @@ Hovering over a color: <br/>
 
 ## To do
 
-I'm contemplating add a feature where you can save a color combination. But this was not bad for one day's work!
+~~I'm contemplating add a feature where you can save a color combination. But this was not bad for one day's work!~~

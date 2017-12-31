@@ -63,38 +63,24 @@
 		color: $text;
 		margin-bottom: 5px;
 	}
-	.complimentary {
-	  display: inline-block;
-	  width: 45%;
-	  margin-right: 10%;
-	  .color1, .color2 {
-	    width: 100%;
-	    height: 100px;
-	    margin-bottom: 10px;
-	  }
-	}
-	.splitComp {
-	  display: inline-block;
-	  width: 45%;
-	  .color1 {
-	    width: 100%;
-	    height: 100px;
-	    margin-bottom: 10px;
-	  }
-	  .color2, .color3 {
-	    float: left;
-	    width: 48%;
-	    height: 100px;
-	    margin-bottom: 10px;
-	  }
-	  .color2 {
-	    margin-right: 4%;
-	  }
-	}
-	.complimentary, .splitComp {
+	.colorCombo {
+		display: inline-block;
+		width: 45%;
+		.color {
+			height: 100px;
+			margin-bottom: 10px;
+		}
+		.num2of3, .num3of3 {
+			float: left;
+			width: 48%;
+		}
+		.num2of3 {
+			margin-right: 4%;
+		}
 		@media (max-width: 550px) {
 			width: 100%;
 			margin-bottom: 20px;
+			margin-right: 0;
 		}
 	}
 	.colorBlock {

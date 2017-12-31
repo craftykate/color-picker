@@ -9,8 +9,8 @@ const SavedColors = (props) => {
         style={{
           cursor: 'pointer',
           backgroundColor: color,
-          width: 20,
-          height: 20,
+          width: 30,
+          height: 30,
           marginRight: 10,
           marginBottom: 5,
           display: 'inline-block'
@@ -19,7 +19,16 @@ const SavedColors = (props) => {
 
   return (
     <div>
-      {props.savedColors.length > 0 ? <p style={{marginBottom: 5}}>Saved Colors: (click on one to load)</p> : null}
+      {props.savedColors.length > 0 ?
+        <p style={{marginBottom: 5}}>
+          Saved Colors: (click on one to load)
+          <a
+            onClick={props.clearSaved}
+            style={{marginLeft: 10}}>
+            (clear)
+          </a>
+        </p>
+        : null}
       {renderedColors}
     </div>
   )
