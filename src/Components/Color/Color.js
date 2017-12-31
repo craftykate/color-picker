@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import convertHexToNewColor from '../../utils/ColorConverter';
+import colorCalculator from '../../utils/ColorCalculator';
 
 import ColorPicker from './ColorPicker/ColorPicker';
 import ComplimentaryColor from'./ComplimentaryColor/ComplimentaryColor';
@@ -10,9 +10,9 @@ class Color extends Component {
   constructor(props) {
     super(props);
     const color = '#ffae4e';
-    const compColor = convertHexToNewColor(color, 'comp');
-    const split1 = convertHexToNewColor(color, 'split1');
-    const split2 = convertHexToNewColor(color, 'split2');
+    const compColor = colorCalculator.getNewColor(color, 'comp');
+    const split1 = colorCalculator.getNewColor(color, 'split1');
+    const split2 = colorCalculator.getNewColor(color, 'split2');
     this.state = {
       showPicker: false,
       color: color,
@@ -33,9 +33,9 @@ class Color extends Component {
   handleChangeColor = (color) => {
     this.setState({
       color: color.hex,
-      compColor: convertHexToNewColor(color.hex, 'comp'),
-      split1: convertHexToNewColor(color.hex, 'split1'),
-      split2: convertHexToNewColor(color.hex, 'split2')
+      compColor: colorCalculator.getNewColor(color.hex, 'comp'),
+      split1: colorCalculator.getNewColor(color.hex, 'split1'),
+      split2: colorCalculator.getNewColor(color.hex, 'split2')
     })
   }
 

@@ -10,7 +10,7 @@ const ColorSwatch = (props) => {
       className={classes}
       style={{backgroundColor: props.color, position: 'relative'}}>
       <div className="hex">
-        <p>{props.color}<br/>
+        <p>{props.color.toUpperCase()}<br/>
         rgb({rgb})</p>
       </div>
     </div>
