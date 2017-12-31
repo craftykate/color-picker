@@ -27,6 +27,11 @@ const ColorPicker = (props) => {
             onChange={props.changeColor} />
         </div>
       : null }
+      <div style={{textAlign: 'center', marginTop: 10}}>
+        <a onClick={props.saveColor}>
+          (save)
+        </a>
+      </div>
     </div>
   )
 }

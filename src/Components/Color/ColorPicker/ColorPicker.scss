@@ -5,6 +5,11 @@
   p {
     text-align: center;
   }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
   .colorSwatch {
     width: 100px;
     height: 100px;
