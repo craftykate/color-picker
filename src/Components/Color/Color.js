@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import convertHexToNewColor from '../../utils/ColorConverter';
+
 import ColorPicker from './ColorPicker/ColorPicker';
 import ComplimentaryColor from'./ComplimentaryColor/ComplimentaryColor';
 import SplitComplimentaryColors from'./SplitComplimentaryColors/SplitComplimentaryColors';
