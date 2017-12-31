@@ -92,6 +92,7 @@
 	  ul {
 	    li {
 	      display: inline;
+				color: $text;
 				&:not(:first-child) {
 					&::before {
 						content: " | ";

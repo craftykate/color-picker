@@ -27,6 +27,12 @@
 			text-decoration: none;
 			cursor: pointer;
 		}
+		&.textColor {
+			color: $text;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	i, em {

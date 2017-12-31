@@ -19,7 +19,8 @@ class Color extends Component {
       compColor: compColor,
       split1: split1,
       split2: split2,
-      savedColors: []
+      savedColors: [],
+      backgroundColor: "white"
     }
   }
 
@@ -72,9 +73,22 @@ class Color extends Component {
     })
   }
 
+  toggleBackgroundColor = () => {
+    this.setState((prevState, props) => {
+      const newColor = prevState.backgroundColor === "white" ? "black" : "white"
+      document.body.style.backgroundColor = newColor;
+      return {
+        backgroundColor: newColor
+      }
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
+        <a
+          className="textColor"
+          onClick={this.toggleBackgroundColor}>(toggle background color)</a>
         <ColorPicker
           color={this.state.color}
           toggleColorPicker={this.handleToggleColorPicker}
