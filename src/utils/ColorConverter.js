@@ -40,8 +40,8 @@ const convertHexToNewColor = (hex, whichColor) => {
 
     // Shift hue to opposite side of wheel and convert to [0-1] value
     if (whichColor === 'comp') h+= 180;;
-    if (whichColor === 'split1') h+= 160;
-    if (whichColor === 'split2') h+= 200;
+    if (whichColor === 'split1') h+= 150;
+    if (whichColor === 'split2') h+= 210;
 
     if (h > 360) { h -= 360; }
     h /= 360;

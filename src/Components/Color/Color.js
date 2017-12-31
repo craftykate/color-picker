@@ -21,7 +21,6 @@ class Color extends Component {
     }
   }
 
-
   handleToggleColorPicker = () => {
     this.setState( (prevState) => {
       return {
@@ -44,8 +43,6 @@ class Color extends Component {
       showPicker: false
     })
   }
-
-
 
   render() {
     return (
