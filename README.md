@@ -14,10 +14,10 @@ I like seeing color combinations while I'm planning a new project - whether it's
 
 This site uses React Color for the color picker. Slide it around to find your starting color and the site automatically updates the other colors. Hover over a color to see (and be able to copy) the hex and rgb codes. Click a new color and that color will become the main color.
 
-Color Picker:
+Color Picker:<br/>
 ![](./public/colorpicker.jpg)
 
-Hovering over a color:
+Hovering over a color: <br/>
 ![](./public/hover.jpg)
 
 ## To do
