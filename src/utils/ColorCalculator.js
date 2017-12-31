@@ -6,7 +6,6 @@ const colorCalculator = {
 
     // Get array of RGB values
     rgb = rgb.replace(/[^\d,]/g, '').split(',');
-    const r = rgb[0], g = rgb[1], b = rgb[2];
 
     return (rgb);
   }

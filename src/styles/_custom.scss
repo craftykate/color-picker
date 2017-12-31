@@ -93,10 +93,11 @@
 	}
 	.colorBlock {
 		.hex {
+			position: absolute;
 			display: none;
 			background-color: white;
-			top: 30%;
-			left: 10%;
+			top: 10px;
+			left: 10px;
 			@include round;
 			p {
 				margin: 0;

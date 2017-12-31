@@ -8,11 +8,11 @@ const ColorSwatch = (props) => {
   return (
     <div
       className={classes}
-      style={{backgroundColor: props.color}}>
-      {/*<div className="hex">
+      style={{backgroundColor: props.color, position: 'relative'}}>
+      <div className="hex">
         <p>{props.color}<br/>
         rgb({rgb})</p>
-      </div>*/}
+      </div>
     </div>
   )
 }
