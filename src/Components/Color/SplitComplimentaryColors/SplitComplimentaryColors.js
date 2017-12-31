@@ -7,13 +7,19 @@ const SplitComplimentaryColors = (props) => (
     <h2>Split Complimentary Colors</h2>
     <ColorSwatch
       class="color1"
-      color={props.color} />
+      color={props.color}
+      updateColor={props.updateColor}
+      hexClick={props.hexClick}/>
     <ColorSwatch
       class="color2"
-      color={props.split1} />
+      color={props.split1}
+      updateColor={props.updateColor}
+      hexClick={props.hexClick}/>
     <ColorSwatch
       class="color3"
-      color={props.split2} />
+      color={props.split2}
+      updateColor={props.updateColor}
+      hexClick={props.hexClick}/>
   </div>
 )
 

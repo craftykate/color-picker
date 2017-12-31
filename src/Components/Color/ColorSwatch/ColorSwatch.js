@@ -7,9 +7,12 @@ const ColorSwatch = (props) => {
   let rgb = colorCalculator.convertHexToRgb(props.color).join(", ");
   return (
     <div
+      onClick={() => props.updateColor(props.color)}
       className={classes}
       style={{backgroundColor: props.color, position: 'relative'}}>
-      <div className="hex">
+      <div
+        onClick={props.hexClick}
+        className="hex">
         <p>{props.color.toUpperCase()}<br/>
         rgb({rgb})</p>
       </div>

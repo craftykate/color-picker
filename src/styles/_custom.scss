@@ -91,9 +91,17 @@
 	    margin-right: 4%;
 	  }
 	}
+	.complimentary, .splitComp {
+		@media (max-width: 550px) {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+	}
 	.colorBlock {
+		cursor: pointer;
 		.hex {
 			position: absolute;
+			z-index: 5;
 			display: none;
 			background-color: white;
 			top: 10px;
@@ -108,6 +116,7 @@
 		&:hover {
 			.hex {
 				display: block;
+				cursor: text;
 			}
 		}
 	}
@@ -116,7 +125,7 @@
 
 //*============ FOOTER ============*/
 	footer {
-	  border-top: 1px solid $main;
+	  border-top: 1px solid $text;
 	  margin-bottom: 30px;
 	  padding-top: 10px;
 	  text-align: center;

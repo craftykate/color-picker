@@ -9,7 +9,7 @@ import SplitComplimentaryColors from'./SplitComplimentaryColors/SplitComplimenta
 class Color extends Component {
   constructor(props) {
     super(props);
-    const color = '#ffae4e';
+    const color = '#5ED5FF';
     const compColor = colorCalculator.getNewColor(color, 'comp');
     const split1 = colorCalculator.getNewColor(color, 'split1');
     const split2 = colorCalculator.getNewColor(color, 'split2');
@@ -45,6 +45,19 @@ class Color extends Component {
     })
   }
 
+  handleUpdateColor = (oldColor) => {
+    this.setState({
+      color: oldColor,
+      compColor: colorCalculator.getNewColor(oldColor, 'comp'),
+      split1: colorCalculator.getNewColor(oldColor, 'split1'),
+      split2: colorCalculator.getNewColor(oldColor, 'split2')
+    })
+  }
+
+  handleHexClick = (event) => {
+    event.stopPropagation();
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -56,11 +69,15 @@ class Color extends Component {
           closePicker={this.handleClosePicker}/>
         <ComplimentaryColor
           color={this.state.color}
-          compColor={this.state.compColor}/>
+          compColor={this.state.compColor}
+          updateColor={this.handleUpdateColor}
+          hexClick={this.handleHexClick}/>
         <SplitComplimentaryColors
           color={this.state.color}
           split1={this.state.split1}
-          split2={this.state.split2}/>
+          split2={this.state.split2}
+          updateColor={this.handleUpdateColor}
+          hexClick={this.handleHexClick}/>
       </React.Fragment>
     )
   }
