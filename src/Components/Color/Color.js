@@ -125,27 +125,27 @@ class Color extends Component {
           closePicker={this.handleClosePicker}
           saveColor={this.handleSaveColor}/>
         <ColorCombo
-          name="Complementary Colors"
+          name="Complementary"
           marginRight={true}
           colors={[this.state.color, this.state.compColor]}
           updateColor={this.handleUpdateColor}
           hexClick={this.handleHexClick} />
         <ColorCombo
-          name="Split Complementary Colors"
+          name="Split Complementary"
           marginRight={false}
           colors={[this.state.color, this.state.split1, this.state.split2]}
           updateColor={this.handleUpdateColor}
           hexClick={this.handleHexClick} />
         <ColorCombo
-          name="Analogous"
+          name="Triad Combination"
           marginRight={true}
-          colors={[this.state.color, this.state.analogous1, this.state.analogous2]}
+          colors={[this.state.color, this.state.triad1, this.state.triad2]}
           updateColor={this.handleUpdateColor}
           hexClick={this.handleHexClick} />
         <ColorCombo
-          name="Triad Combination"
+          name="Analogous"
           marginRight={false}
-          colors={[this.state.color, this.state.triad1, this.state.triad2]}
+          colors={[this.state.color, this.state.analogous1, this.state.analogous2]}
           updateColor={this.handleUpdateColor}
           hexClick={this.handleHexClick} />
         <ColorCombo
