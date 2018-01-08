@@ -47,6 +47,13 @@ const colorCalculator = {
     if (whichColor === 'comp') h+= 180;;
     if (whichColor === 'split1') h+= 150;
     if (whichColor === 'split2') h+= 210;
+    if (whichColor === 'triad1') h += 120;
+    if (whichColor === 'triad2') h += 240;
+    if (whichColor === 'square1') h += 90;
+    if (whichColor === 'square2') h += 180;
+    if (whichColor === 'square3') h += 270;
+    if (whichColor === 'analogous1') h += 30;
+    if (whichColor === 'analogous2') h += 330;
 
     if (h > 360) { h -= 360; }
     h /= 360;

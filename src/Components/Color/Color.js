@@ -13,12 +13,26 @@ class Color extends Component {
     const compColor = colorCalculator.getNewColor(color, 'comp');
     const split1 = colorCalculator.getNewColor(color, 'split1');
     const split2 = colorCalculator.getNewColor(color, 'split2');
+    const triad1 = colorCalculator.getNewColor(color, 'triad1');
+    const triad2 = colorCalculator.getNewColor(color, 'triad2');
+    const square1 = colorCalculator.getNewColor(color, 'square1');
+    const square2 = colorCalculator.getNewColor(color, 'square2');
+    const square3 = colorCalculator.getNewColor(color, 'square3');
+    const analogous1 = colorCalculator.getNewColor(color, 'analogous1');
+    const analogous2 = colorCalculator.getNewColor(color, 'analogous2');
     this.state = {
       showPicker: false,
       color: color,
       compColor: compColor,
       split1: split1,
       split2: split2,
+      triad1: triad1,
+      triad2: triad2,
+      square1: square1,
+      square2: square2, 
+      square3: square3,
+      analogous1: analogous1, 
+      analogous2: analogous2,
       savedColors: [],
       backgroundColor: "white"
     }
@@ -37,7 +51,14 @@ class Color extends Component {
       color: color.hex,
       compColor: colorCalculator.getNewColor(color.hex, 'comp'),
       split1: colorCalculator.getNewColor(color.hex, 'split1'),
-      split2: colorCalculator.getNewColor(color.hex, 'split2')
+      split2: colorCalculator.getNewColor(color.hex, 'split2'),
+      triad1: colorCalculator.getNewColor(color.hex, 'triad1'),
+      triad2: colorCalculator.getNewColor(color.hex, 'triad2'),
+      square1: colorCalculator.getNewColor(color.hex, 'square1'),
+      square2: colorCalculator.getNewColor(color.hex, 'square2'),
+      square3: colorCalculator.getNewColor(color.hex, 'square3'),
+      analogous1: colorCalculator.getNewColor(color.hex, 'analogous1'),
+      analogous2: colorCalculator.getNewColor(color.hex, 'analogous2'),
     })
   }
 
@@ -52,7 +73,14 @@ class Color extends Component {
       color: oldColor,
       compColor: colorCalculator.getNewColor(oldColor, 'comp'),
       split1: colorCalculator.getNewColor(oldColor, 'split1'),
-      split2: colorCalculator.getNewColor(oldColor, 'split2')
+      split2: colorCalculator.getNewColor(oldColor, 'split2'),
+      triad1: colorCalculator.getNewColor(oldColor, 'triad1'),
+      triad2: colorCalculator.getNewColor(oldColor, 'triad2'),
+      square1: colorCalculator.getNewColor(oldColor, 'square1'),
+      square2: colorCalculator.getNewColor(oldColor, 'square2'),
+      square3: colorCalculator.getNewColor(oldColor, 'square3'),
+      analogous1: colorCalculator.getNewColor(oldColor, 'analogous1'),
+      analogous2: colorCalculator.getNewColor(oldColor, 'analogous2'),
     })
   }
 
@@ -97,15 +125,33 @@ class Color extends Component {
           closePicker={this.handleClosePicker}
           saveColor={this.handleSaveColor}/>
         <ColorCombo
-          name="Complimentary Colors"
+          name="Complementary Colors"
           marginRight={true}
           colors={[this.state.color, this.state.compColor]}
           updateColor={this.handleUpdateColor}
           hexClick={this.handleHexClick} />
         <ColorCombo
-          name="Split Complimentary Colors"
+          name="Split Complementary Colors"
           marginRight={false}
           colors={[this.state.color, this.state.split1, this.state.split2]}
+          updateColor={this.handleUpdateColor}
+          hexClick={this.handleHexClick} />
+        <ColorCombo
+          name="Analogous"
+          marginRight={true}
+          colors={[this.state.color, this.state.analogous1, this.state.analogous2]}
+          updateColor={this.handleUpdateColor}
+          hexClick={this.handleHexClick} />
+        <ColorCombo
+          name="Triad Combination"
+          marginRight={false}
+          colors={[this.state.color, this.state.triad1, this.state.triad2]}
+          updateColor={this.handleUpdateColor}
+          hexClick={this.handleHexClick} />
+        <ColorCombo
+          name="Square Combination"
+          marginRight={true}
+          colors={[this.state.color, this.state.square1, this.state.square2, this.state.square3]}
           updateColor={this.handleUpdateColor}
           hexClick={this.handleHexClick} />
         <SavedColors

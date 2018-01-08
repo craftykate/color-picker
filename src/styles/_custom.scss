@@ -53,6 +53,13 @@
 		.num2of3 {
 			margin-right: 4%;
 		}
+		.num1of4, .num2of4, .num3of4, .num4of4 {
+			float: left;
+			width: 48%;
+		}
+		.num1of4, .num3of4 {
+			margin-right: 4%;
+		}
 		@media (max-width: 550px) {
 			display: block;
 			width: 100%;
