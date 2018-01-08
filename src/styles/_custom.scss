@@ -10,6 +10,9 @@
 		margin: 0 auto;
 		width: 90%;
 		max-width: 940px;
+		@media (min-width: 500px) {
+			max-width: 500px;
+		}
 	}
 
 	.clear {
@@ -51,9 +54,9 @@
 			margin-right: 4%;
 		}
 		@media (max-width: 550px) {
+			display: block;
 			width: 100%;
-			margin-bottom: 20px;
-			margin-right: 0;
+			margin: 0 auto 20px auto;
 		}
 	}
 	.colorBlock {
