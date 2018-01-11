@@ -1,6 +1,6 @@
 # Color Picker
 
-A sweet little tool for finding complimentary and split complimentary colors.
+A sweet little tool for finding several different color combinations - complimentary, split complimentary, triad, analogous and square combinations.
 
 See it live at [kates-color-picker.surge.sh](http://kates-color-picker.surge.sh/)
 
@@ -8,7 +8,7 @@ See it live at [kates-color-picker.surge.sh](http://kates-color-picker.surge.sh/
 
 ## Background
 
-I like seeing color combinations while I'm planning a new project - whether it's a new site or a knitted item. My favorite combinations are complimentary and split complimentary. So I built a little tool in React that lets you pick a color and calculates the - you guess it - complimentary colors and split complimentary colors.
+I like seeing color combinations while I'm planning a new project - whether it's a new site, a knitted item, or paint colors for the house. So I built a little tool in React that lets you pick a color and it calculates various color combinations.
 
 ## Features
 
