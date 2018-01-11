@@ -28,7 +28,7 @@ const SavedColors = (props) => {
             (clear)
           </a>
         </p>
-        : null}
+        : <p style={{ marginBottom: 30 }}>Save a color to load it here:</p>}
       {renderedColors}
     </div>
   )

@@ -44,16 +44,17 @@ const colorCalculator = {
     h = h / 6.2832 * 360.0 + 0;
 
     // Shift hue to opposite side of wheel and convert to [0-1] value
-    if (whichColor === 'comp') h+= 180;;
-    if (whichColor === 'split1') h+= 150;
-    if (whichColor === 'split2') h+= 210;
-    if (whichColor === 'triad1') h += 120;
-    if (whichColor === 'triad2') h += 240;
-    if (whichColor === 'square1') h += 90;
-    if (whichColor === 'square2') h += 180;
-    if (whichColor === 'square3') h += 270;
-    if (whichColor === 'analogous1') h += 30;
-    if (whichColor === 'analogous2') h += 330;
+    if (whichColor === '30') h+= 30;
+    if (whichColor === '60') h+= 60;
+    if (whichColor === '90') h+= 90;
+    if (whichColor === '120') h += 120;
+    if (whichColor === '150') h += 150;
+    if (whichColor === '180') h += 180;
+    if (whichColor === '210') h += 210;
+    if (whichColor === '240') h += 240;
+    if (whichColor === '270') h += 270;
+    if (whichColor === '300') h += 300;
+    if (whichColor === '330') h += 330;
 
     if (h > 360) { h -= 360; }
     h /= 360;
