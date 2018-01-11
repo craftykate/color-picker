@@ -6,16 +6,24 @@ import SavedColors from './SavedColors/SavedColors';
 
 
 class Color extends Component {
-  state = {
-    colors: {},
-    showPicker: false,
-    savedColors: [],
-    backgroundColor: "white"
+  constructor(props) {
+    super(props);
+    let savedColors = [];
+    if (localStorage.getItem('savedColors') !== null) {
+      savedColors = JSON.parse(localStorage.getItem('savedColors'));
+    }
+    this.state = {
+      colors: {},
+      showPicker: false,
+      savedColors: savedColors,
+      backgroundColor: "white"
+    }
   }
 
   // set state.colors when starting
   componentWillMount() {
-    this.changeColors('#5ED5FF');
+    const loadColor = this.state.savedColors.length > 0 ? this.state.savedColors[this.state.savedColors.length - 1] : '#5ED5FF'
+    this.changeColors(loadColor);
   }
 
   // change color wheel colors based on color picked
@@ -67,6 +75,7 @@ class Color extends Component {
   // save color
   handleSaveColor = () => {
     const updatedSavedColors = [...this.state.savedColors, this.state.colors.color01];
+    localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
     this.setState({
       savedColors: updatedSavedColors
     })
@@ -74,6 +83,7 @@ class Color extends Component {
 
   // clear saved colors
   handleClearSaved = () => {
+    localStorage.clear();
     this.setState({
       savedColors: []
     })

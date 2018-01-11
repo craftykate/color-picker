@@ -3,9 +3,11 @@ import React from 'react';
 
 const Footer = () => (
   <footer>
-    <p>Click (save) to save color. <br/>
+    <p>
+      Hover over a color to get hex and rgb codes. <br/>
       Click on a color to set that as the main color. <br/>
-      Hover over a color to get hex and rgb codes.
+      Click (save) to save color. <br />
+      Your browser will remember your saved colors and will load your last saved color next time you visit
     </p> 
     <p style={{fontSize: '80%', fontStyle: 'italic'}}>
       Why isn't green the complementary color of red? <br/>
