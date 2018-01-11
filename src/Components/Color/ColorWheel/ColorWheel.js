@@ -4,18 +4,19 @@ import './ColorWheel.css';
 const ColorWheel = (props) => {
   let colors = {
     color01: props.colors[0],
-    color02: 'white',
-    color03: 'white',
-    color04: 'white',
-    color05: 'white',
-    color06: 'white',
-    color07: 'white',
-    color08: 'white',
-    color09: 'white',
-    color10: 'white',
-    color11: 'white',
-    color12: 'white'
-  }
+    color02: props.bgc,
+    color03: props.bgc,
+    color04: props.bgc,
+    color05: props.bgc,
+    color06: props.bgc,
+    color07: props.bgc,
+    color08: props.bgc,
+    color09: props.bgc,
+    color10: props.bgc,
+    color11: props.bgc,
+    color12: props.bgc
+  };
+
   switch (props.wheel) {
     case 'comp':
       colors.color07 = props.colors[1];
@@ -39,9 +40,11 @@ const ColorWheel = (props) => {
       break;
     default:
       break;
-  }
+  };
+
+  let classes = [document.body.style.backgroundColor, 'colorWheel'];
   return (
-    <div id="colorWheel">
+    <div className={classes.join(" ")}>
       <span className="color01" style={{ borderColor: `${colors.color01} transparent transparent transparent`}} ></span>
       <span className="color02" style={{ borderColor: `${colors.color02} transparent transparent transparent` }} ></span>
       <span className="color03" style={{ borderColor: `${colors.color03} transparent transparent transparent` }} ></span>

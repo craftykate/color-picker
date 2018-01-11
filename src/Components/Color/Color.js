@@ -13,10 +13,12 @@ class Color extends Component {
     backgroundColor: "white"
   }
 
+  // set state.colors when starting
   componentWillMount() {
     this.changeColors('#5ED5FF');
   }
 
+  // change color wheel colors based on color picked
   changeColors = (color) => {
     this.setState({
       colors: {
@@ -36,10 +38,12 @@ class Color extends Component {
     });
   }
 
+  // change color wheel colors based on hex value of color picker
   handleChangeColor = (color) => {
     this.changeColors(color.hex);
   }
 
+  // show color picker
   handleToggleColorPicker = () => {
     this.setState((prevState) => {
       return {
@@ -48,16 +52,19 @@ class Color extends Component {
     });
   }
 
+  // hide color picker
   handleClosePicker = () => {
     this.setState({
       showPicker: false
     })
   }
 
+  // don't set color as main color if clicking on hex/rgb values
   handleHexClick = (event) => {
     event.stopPropagation();
   }
 
+  // save color
   handleSaveColor = () => {
     const updatedSavedColors = [...this.state.savedColors, this.state.colors.color01];
     this.setState({
@@ -65,12 +72,14 @@ class Color extends Component {
     })
   }
 
+  // clear saved colors
   handleClearSaved = () => {
     this.setState({
       savedColors: []
     })
   }
 
+  // change background to opposite color 
   toggleBackgroundColor = () => {
     this.setState((prevState, props) => {
       const newColor = prevState.backgroundColor === "white" ? "black" : "white"
@@ -100,35 +109,40 @@ class Color extends Component {
           marginRight={true}
           colors={[this.state.colors.color01, this.state.colors.color07]}
           updateColor={this.changeColors}
-          hexClick={this.handleHexClick} />
+          hexClick={this.handleHexClick} 
+          bgc={this.state.backgroundColor} />
         <ColorCombo
           name="Split Complementary"
           wheel="split"
           marginRight={false}
           colors={[this.state.colors.color01, this.state.colors.color08, this.state.colors.color06]}
           updateColor={this.changeColors}
-          hexClick={this.handleHexClick} />
+          hexClick={this.handleHexClick} 
+          bgc={this.state.backgroundColor} />
         <ColorCombo
           name="Triad Combination"
           wheel="triad"
           marginRight={true}
           colors={[this.state.colors.color01, this.state.colors.color09, this.state.colors.color05]}
           updateColor={this.changeColors}
-          hexClick={this.handleHexClick} />
+          hexClick={this.handleHexClick} 
+          bgc={this.state.backgroundColor} />
         <ColorCombo
           name="Analogous"
           wheel="analogous"
           marginRight={false}
           colors={[this.state.colors.color01, this.state.colors.color12, this.state.colors.color02]}
           updateColor={this.changeColors}
-          hexClick={this.handleHexClick} />
+          hexClick={this.handleHexClick} 
+          bgc={this.state.backgroundColor} />
         <ColorCombo
           name="Square Combination"
           wheel="square"
           marginRight={true}
           colors={[this.state.colors.color01, this.state.colors.color04, this.state.colors.color10, this.state.colors.color07]}
           updateColor={this.changeColors}
-          hexClick={this.handleHexClick} />
+          hexClick={this.handleHexClick} 
+          bgc={this.state.backgroundColor} />
         <SavedColors
           savedColors={this.state.savedColors}
           updateColor={this.changeColors}

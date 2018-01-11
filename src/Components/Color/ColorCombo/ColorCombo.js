@@ -12,7 +12,8 @@ const ColorCombo = (props) => {
       >
       <ColorWheel 
         wheel={props.wheel}
-        colors={props.colors}/>
+        colors={props.colors}
+        bgc={props.bgc}/>
       <h2>{props.name}</h2>
       {props.colors.map((color, i) => {
         const classes=`color num${i+1}of${props.colors.length}`;
