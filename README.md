@@ -18,6 +18,8 @@ Now you can save colors! Click save and your saved colors will show up at the bo
 
 Not everyone knows what the different color combinations mean, so now each combo shows a color wheel at the top with the specific colors shown. Color wheels are built in HTML/CSS and update as well when the color changes.
 
+Toggle the background between white and black.
+
 Color Picker:<br/>
 ![](./public/colorpicker.jpg)
 
@@ -26,4 +28,5 @@ Hovering over a color: <br/>
 
 ## To do
 
-~~I'm contemplating add a feature where you can save a color combination. But this was not bad for one day's work!~~
+* ~~I'm contemplating add a feature where you can save a color combination. But this was not bad for one day's work!~~
+* Clear just one saved color at a time
