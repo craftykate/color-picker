@@ -46,7 +46,7 @@ const ColorWheel = (props) => {
   return (
     <div className={classes.join(" ")}>
       {Object.keys(colors).map(color => {
-        return (<span className={color} style={{ borderColor: `${colors[color]} transparent transparent transparent` }} ></span>)
+        return (<span key={color} className={color} style={{ borderColor: `${colors[color]} transparent transparent transparent` }} ></span>)
       })}
     </div>
   )

@@ -104,7 +104,7 @@ class Color extends Component {
       },
       {
         name: "Split Complementary",
-        wheel: "comp",
+        wheel: "split",
         colors: [this.state.colors.color01, this.state.colors.color08, this.state.colors.color06]
       },
       {
