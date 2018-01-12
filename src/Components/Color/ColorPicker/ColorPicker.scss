@@ -1,4 +1,5 @@
 @import '../../../styles/_mixins.scss';
+@import '../../../styles/_colors.scss';
 
 .colorPicker {
   margin-top: 20px;
@@ -8,6 +9,10 @@
   a {
     &:hover {
       text-decoration: none;
+    }
+    &.saved {
+      color: lighten($text, 20%);
+      cursor: default;
     }
   }
   .colorSwatch {

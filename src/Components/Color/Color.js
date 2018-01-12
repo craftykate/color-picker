@@ -83,6 +83,13 @@ class Color extends Component {
     this.setState({ savedColors: [] })
   }
 
+  handleDeleteOneSaved = (index) => {
+    let updatedSavedColors = [...this.state.savedColors];
+    updatedSavedColors.splice(index, 1);
+    localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
+    this.setState({ savedColors: updatedSavedColors})
+  }
+
   // change background to opposite color 
   toggleBackgroundColor = () => {
     this.setState((prevState, props) => {
@@ -152,12 +159,15 @@ class Color extends Component {
           showPicker={this.state.showPicker}
           changeColor={this.handleChangeColor}
           closePicker={this.handleClosePicker}
-          saveColor={this.handleSaveColor} />
+          saveColor={this.handleSaveColor}
+          savedColors={this.state.savedColors} />
         {this.renderColorCombinations()}
+        <hr/>
         <SavedColors
           savedColors={this.state.savedColors}
           updateColor={this.changeColors}
-          clearSaved={this.handleClearSaved} />
+          clearSaved={this.handleClearSaved}
+          deleteOneSaved={this.handleDeleteOneSaved} />
       </React.Fragment>
     )
   }

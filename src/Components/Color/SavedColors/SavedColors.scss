@@ -1,0 +1,43 @@
+@import '../../../styles/_colors.scss';
+@import '../../../styles/_mixins.scss';
+
+.savedColors {
+  .title {
+    margin-bottom: 5px;
+    .clearLink {
+      margin-left: 10px;
+    }
+  }
+  .savedColorsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    .savedColorContainer {
+      display: inline-block;
+      min-width: 107px;
+      border: 1px solid $text;
+      border-radius: 10px;
+      overflow: hidden;
+      box-sizing: border-box;
+      margin-right: 10px;
+      margin-bottom: 20px;
+      .savedColor {
+        width: 100%;
+        height: 107px;
+        cursor: pointer;
+      }
+      .colorNames {
+        width: 100%;
+        padding: 5px;
+        cursor: text;
+        p {
+          margin-bottom: 0px;
+          font-size: 80%;
+          &.delete {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

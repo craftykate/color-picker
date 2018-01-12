@@ -1,35 +1,41 @@
 import React from 'react';
+import './SavedColors.css';
+import colorCalculator from '../../../utils/ColorCalculator';
 
 const SavedColors = (props) => {
   const renderedColors = props.savedColors.map((color, i) => {
     return (
-      <div
+      <div 
         key={i}
-        onClick={() => props.updateColor(color)}
-        style={{
-          cursor: 'pointer',
-          backgroundColor: color,
-          width: 30,
-          height: 30,
-          marginRight: 10,
-          marginBottom: 5,
-          display: 'inline-block'
-        }} />)
+        className="savedColorContainer">
+        <div
+          className="savedColor"
+          onClick={() => props.updateColor(color)}
+          style={{ backgroundColor: color }} />
+        <div className="colorNames">
+          <p>{color.toUpperCase()}</p>
+          <p>({colorCalculator.convertHexToRgb(color).join(", ")})</p>
+          <p className="delete"><a onClick={() => props.deleteOneSaved(i)}>(delete)</a></p>
+        </div>
+      </div>
+    )
   })
 
   return (
-    <div>
+    <div className="savedColors">
       {props.savedColors.length > 0 ?
-        <p style={{marginBottom: 5}}>
+        <p className="title">
           Saved Colors: (click on one to load)
           <a
-            onClick={props.clearSaved}
-            style={{marginLeft: 10}}>
-            (clear)
+            className="clearLink"
+            onClick={props.clearSaved}>
+            (clear all)
           </a>
         </p>
-        : <p style={{ marginBottom: 30 }}>Save a color to load it here:</p>}
-      {renderedColors}
+        : <p className="title">Save a color to load it here:</p>}
+      <div className="savedColorsWrapper">
+        {renderedColors}
+      </div>
     </div>
   )
 

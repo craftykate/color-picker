@@ -4,6 +4,12 @@ import './ColorPicker.css';
 
 
 const ColorPicker = (props) => {
+  let saveLink;
+  if (props.savedColors.includes(props.color)) {
+    saveLink = <a className="saved">(saved!)</a>;
+  } else {
+    saveLink = <a className="save" onClick={props.saveColor}>(save)</a>;
+  }
   return (
     <div className="colorPicker">
       <p>
@@ -28,9 +34,7 @@ const ColorPicker = (props) => {
         </div>
       : null }
       <div style={{textAlign: 'center', margin: '10px 0 10px 0'}}>
-        <a onClick={props.saveColor}>
-          (save)
-        </a>
+        {saveLink}
       </div>
     </div>
   )
