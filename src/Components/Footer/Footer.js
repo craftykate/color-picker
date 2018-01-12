@@ -5,7 +5,7 @@ const Footer = () => (
   <footer>
     <p>
       Hover over a color to get hex and rgb codes. <br/>
-      Click on a color to set that as the main color. <br/>
+      Click on any color to set that as the main color. <br/>
       Click (save) to save color. <br />
       Your browser will remember your saved colors and will load your last saved color next time you visit
     </p> 
