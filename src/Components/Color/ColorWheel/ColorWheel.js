@@ -45,18 +45,9 @@ const ColorWheel = (props) => {
   let classes = [document.body.style.backgroundColor, 'colorWheel'];
   return (
     <div className={classes.join(" ")}>
-      <span className="color01" style={{ borderColor: `${colors.color01} transparent transparent transparent`}} ></span>
-      <span className="color02" style={{ borderColor: `${colors.color02} transparent transparent transparent` }} ></span>
-      <span className="color03" style={{ borderColor: `${colors.color03} transparent transparent transparent` }} ></span>
-      <span className="color04" style={{ borderColor: `${colors.color04} transparent transparent transparent` }} ></span>
-      <span className="color05" style={{ borderColor: `${colors.color05} transparent transparent transparent` }} ></span>
-      <span className="color06" style={{ borderColor: `${colors.color06} transparent transparent transparent` }} ></span>
-      <span className="color07" style={{ borderColor: `${colors.color07} transparent transparent transparent` }} ></span>
-      <span className="color08" style={{ borderColor: `${colors.color08} transparent transparent transparent` }} ></span>
-      <span className="color09" style={{ borderColor: `${colors.color09} transparent transparent transparent` }} ></span>
-      <span className="color10" style={{ borderColor: `${colors.color10} transparent transparent transparent` }} ></span>
-      <span className="color11" style={{ borderColor: `${colors.color11} transparent transparent transparent` }} ></span>
-      <span className="color12" style={{ borderColor: `${colors.color12} transparent transparent transparent` }} ></span>
+      {Object.keys(colors).map(color => {
+        return (<span className={color} style={{ borderColor: `${colors[color]} transparent transparent transparent` }} ></span>)
+      })}
     </div>
   )
 }

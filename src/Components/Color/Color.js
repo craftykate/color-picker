@@ -62,9 +62,7 @@ class Color extends Component {
 
   // hide color picker
   handleClosePicker = () => {
-    this.setState({
-      showPicker: false
-    })
+    this.setState({ showPicker: false })
   }
 
   // don't set color as main color if clicking on hex/rgb values
@@ -76,17 +74,13 @@ class Color extends Component {
   handleSaveColor = () => {
     const updatedSavedColors = [...this.state.savedColors, this.state.colors.color01];
     localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
-    this.setState({
-      savedColors: updatedSavedColors
-    })
+    this.setState({ savedColors: updatedSavedColors })
   }
 
   // clear saved colors
   handleClearSaved = () => {
     localStorage.clear();
-    this.setState({
-      savedColors: []
-    })
+    this.setState({ savedColors: [] })
   }
 
   // change background to opposite color 
@@ -97,6 +91,52 @@ class Color extends Component {
       return {
         backgroundColor: newColor
       }
+    })
+  }
+
+  // render color combinations
+  renderColorCombinations = () => {
+    let colorCombos = [
+      {
+        name: "Complementary",
+        wheel: "comp",
+        colors: [this.state.colors.color01, this.state.colors.color07]
+      },
+      {
+        name: "Split Complementary",
+        wheel: "comp",
+        colors: [this.state.colors.color01, this.state.colors.color08, this.state.colors.color06]
+      },
+      {
+        name: "Triad Combination",
+        wheel: "triad",
+        colors: [this.state.colors.color01, this.state.colors.color09, this.state.colors.color05]
+      },
+      {
+        name: "Analogous",
+        wheel: "analogous",
+        colors: [this.state.colors.color01, this.state.colors.color12, this.state.colors.color02]
+      },
+      {
+        name: "Square Combination",
+        wheel: "square",
+        colors: [this.state.colors.color01, this.state.colors.color04, this.state.colors.color10, this.state.colors.color07]
+      }
+    ]
+
+    return colorCombos.map((combo, i) => {
+      const margin = i%2 === 0 ? true : false;
+      return (
+        <ColorCombo
+          key={`${combo}_${i}`}
+          name={combo.name}
+          wheel={combo.wheel}
+          marginRight={margin}
+          colors={combo.colors}
+          updateColor={this.changeColors}
+          hexClick={this.handleHexClick}
+          bgc={this.state.backgroundColor} />
+      )
     })
   }
 
@@ -113,46 +153,7 @@ class Color extends Component {
           changeColor={this.handleChangeColor}
           closePicker={this.handleClosePicker}
           saveColor={this.handleSaveColor} />
-        <ColorCombo
-          name="Complementary"
-          wheel="comp"
-          marginRight={true}
-          colors={[this.state.colors.color01, this.state.colors.color07]}
-          updateColor={this.changeColors}
-          hexClick={this.handleHexClick} 
-          bgc={this.state.backgroundColor} />
-        <ColorCombo
-          name="Split Complementary"
-          wheel="split"
-          marginRight={false}
-          colors={[this.state.colors.color01, this.state.colors.color08, this.state.colors.color06]}
-          updateColor={this.changeColors}
-          hexClick={this.handleHexClick} 
-          bgc={this.state.backgroundColor} />
-        <ColorCombo
-          name="Triad Combination"
-          wheel="triad"
-          marginRight={true}
-          colors={[this.state.colors.color01, this.state.colors.color09, this.state.colors.color05]}
-          updateColor={this.changeColors}
-          hexClick={this.handleHexClick} 
-          bgc={this.state.backgroundColor} />
-        <ColorCombo
-          name="Analogous"
-          wheel="analogous"
-          marginRight={false}
-          colors={[this.state.colors.color01, this.state.colors.color12, this.state.colors.color02]}
-          updateColor={this.changeColors}
-          hexClick={this.handleHexClick} 
-          bgc={this.state.backgroundColor} />
-        <ColorCombo
-          name="Square Combination"
-          wheel="square"
-          marginRight={true}
-          colors={[this.state.colors.color01, this.state.colors.color04, this.state.colors.color10, this.state.colors.color07]}
-          updateColor={this.changeColors}
-          hexClick={this.handleHexClick} 
-          bgc={this.state.backgroundColor} />
+        {this.renderColorCombinations()}
         <SavedColors
           savedColors={this.state.savedColors}
           updateColor={this.changeColors}
