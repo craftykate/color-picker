@@ -39,58 +39,6 @@
 		font-size: 130%;
 		margin-bottom: 5px;
 	}
-	.colorCombo {
-		display: inline-block;
-		width: 45%;
-		.color {
-			height: 100px;
-			margin-bottom: 10px;
-		}
-		.num2of3, .num3of3 {
-			float: left;
-			width: 48%;
-		}
-		.num2of3 {
-			margin-right: 4%;
-		}
-		.num1of4, .num2of4, .num3of4, .num4of4 {
-			float: left;
-			width: 48%;
-		}
-		.num1of4, .num3of4 {
-			margin-right: 4%;
-		}
-		@media (max-width: 550px) {
-			display: block;
-			width: 100%;
-			margin: 0 auto 20px auto;
-		}
-	}
-	.colorBlock {
-		cursor: pointer;
-		.hex {
-			position: absolute;
-			z-index: 5;
-			display: none;
-			background-color: white;
-			top: 10px;
-			left: 10px;
-			max-width: calc(100% - 20px);
-			@include round;
-			p {
-				margin: 0;
-				padding: 10px;
-				font-size: .8em;
-			}
-		}
-		&:hover {
-			.hex {
-				display: block;
-				cursor: text;
-			}
-		}
-	}
-
 //*============END CONTENT============*/
 
 //*============ FOOTER ============*/

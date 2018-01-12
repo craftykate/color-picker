@@ -1,4 +1,5 @@
 import React from 'react';
+import './ColorCombo.css';
 import ColorSwatch from '../ColorSwatch/ColorSwatch';
 import ColorWheel from '../ColorWheel/ColorWheel';
 
