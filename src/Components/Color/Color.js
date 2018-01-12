@@ -128,6 +128,11 @@ class Color extends Component {
         name: "Square Combination",
         wheel: "square",
         colors: [this.state.colors.color01, this.state.colors.color04, this.state.colors.color10, this.state.colors.color07]
+      },
+      {
+        name: "With Gray",
+        wheel: "single",
+        colors: [this.state.colors.color01, "#C8C8C8", "#828282"]
       }
     ]
 
