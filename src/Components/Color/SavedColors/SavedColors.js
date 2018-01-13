@@ -1,6 +1,7 @@
 import React from 'react';
 import './SavedColors.css';
 import colorCalculator from '../../../utils/ColorCalculator';
+import Popup from '../../UI/Popup/Popup';
 
 const SavedColors = (props) => {
   const renderedColors = props.savedColors.map((color, i) => {
@@ -33,7 +34,16 @@ const SavedColors = (props) => {
                 &#060;&#060;
               </p> 
               : <a>&#32;</a>}
-            <a onClick={() => props.deleteOneSaved(i)}>(del)</a>
+            <a onClick={props.showDelPopup}>(del)</a>
+            <Popup
+              show={props.show}
+              hide={props.hideDelPopup}>
+              <button 
+                style={{width: 100}}
+                onClick={() => props.deleteOneSaved(i)}>
+                Confirm delete
+              </button>
+            </Popup>
             {i !== props.savedColors.length - 1 ? 
               <p
                 className={classRight}

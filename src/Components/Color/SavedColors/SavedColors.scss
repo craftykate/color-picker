@@ -47,6 +47,12 @@
             color: $main;
           }
         }
+        button {
+          @include button($main, darken($main, 20%));
+          padding: 10px;
+          font-size: 150%;
+          border: none;
+        }
       }
     }
   }

@@ -17,7 +17,8 @@ class Color extends Component {
       showPicker: false,
       savedColors: savedColors,
       backgroundColor: "white",
-      hoverState: ""
+      hoverState: "",
+      showDelPopup: false
     }
   }
 
@@ -84,12 +85,24 @@ class Color extends Component {
     this.setState({ savedColors: [] })
   }
 
+  // show delete confirmation window
+  handleShowDelPopup = () => {
+    this.setState({ showDelPopup: true })
+  }
+
+  handleHideDelPopup = () => {
+    this.setState({ showDelPopup: false })
+  }
+
   // delete one saved color
   handleDeleteOneSaved = (index) => {
     let updatedSavedColors = [...this.state.savedColors];
     updatedSavedColors.splice(index, 1);
     localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
-    this.setState({ savedColors: updatedSavedColors})
+    this.setState({ 
+      showDelPopup: false,
+      savedColors: updatedSavedColors
+    })
   }
 
   // move saved color
@@ -215,6 +228,9 @@ class Color extends Component {
           savedColors={this.state.savedColors}
           updateColor={this.changeColors}
           clearSaved={this.handleClearSaved}
+          show={this.state.showDelPopup}
+          showDelPopup={this.handleShowDelPopup}
+          hideDelPopup={this.handleHideDelPopup}
           deleteOneSaved={this.handleDeleteOneSaved}
           moveLeft={this.handleMoveLeft}
           moveRight={this.handleMoveRight}

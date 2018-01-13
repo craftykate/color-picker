@@ -1,0 +1,15 @@
+@import '../../../styles/_mixins.scss';
+
+.Popup {
+    position: fixed;
+    z-index: 500;
+    top: 30%;
+    padding: 5px;
+    background-color: white;
+    left: calc(50% - 70px);
+    overflow: scroll;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+    text-align: center;
+    border-radius: 10px;
+}
