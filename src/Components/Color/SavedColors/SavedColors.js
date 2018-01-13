@@ -63,12 +63,16 @@ const SavedColors = (props) => {
     <div className="savedColors">
       {props.savedColors.length > 0 ?
         <p className="title">
-          Saved Colors: (click on one to load)
+          Saved Colors:
           <a
             className="clearLink"
             onClick={props.clearSaved}>
             (clear all)
-          </a>
+          </a><br />
+          <span>(click on a color to load it above
+            {props.savedColors.length > 1 ? ', click << or >> to move its position' : null}
+          )</span>
+         
         </p>
         : <p className="title">Save a color to load it here:</p>}
       <div className="savedColorsWrapper">

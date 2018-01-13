@@ -7,6 +7,11 @@
     .clearLink {
       margin-left: 10px;
     }
+    span {
+      font-size: 80%;
+      font-style: italic;
+      color: lighten($text, 20%);
+    }
   }
   .savedColorsWrapper {
     display: flex;
