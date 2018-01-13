@@ -15,7 +15,21 @@ const SavedColors = (props) => {
         <div className="colorNames">
           <p>{color.toUpperCase()}</p>
           <p>({colorCalculator.convertHexToRgb(color).join(", ")})</p>
-          <p className="delete"><a onClick={() => props.deleteOneSaved(i)}>(delete)</a></p>
+          <div className="links">
+            {i !== 0 ? 
+              <a 
+                onClick={() => props.moveLeft(i)}>
+                &#060;&#060;
+              </a> 
+              : <a>&#32;</a>}
+            <a onClick={() => props.deleteOneSaved(i)}>(del)</a>
+            {i !== props.savedColors.length - 1 ? 
+              <a 
+                onClick={() => props.moveRight(i)}>
+                &#062;&#062;
+              </a> 
+              : <a>&#32;</a>}
+          </div>
         </div>
       </div>
     )

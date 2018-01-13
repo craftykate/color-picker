@@ -14,7 +14,7 @@
     justify-content: flex-start; 
     .savedColorContainer {
       display: inline-block;
-      min-width: 107px;
+      min-width: 102px;
       border: 1px solid $text;
       border-radius: 10px;
       overflow: hidden;
@@ -30,12 +30,15 @@
         width: 100%;
         padding: 5px;
         cursor: text;
+        font-size: 80%;
+        box-sizing: border-box;
         p {
           margin-bottom: 0px;
-          font-size: 80%;
-          &.delete {
-            margin-top: 10px;
-          }
+        }
+        .links {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 10px;
         }
       }
     }

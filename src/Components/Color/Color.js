@@ -83,11 +83,31 @@ class Color extends Component {
     this.setState({ savedColors: [] })
   }
 
+  // delete one saved color
   handleDeleteOneSaved = (index) => {
     let updatedSavedColors = [...this.state.savedColors];
     updatedSavedColors.splice(index, 1);
     localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
     this.setState({ savedColors: updatedSavedColors})
+  }
+
+  // move saved color
+  handleMoveLeft = (index) => {
+    const updatedSavedColors = [...this.state.savedColors];
+    const itemToMove = updatedSavedColors[index];
+    updatedSavedColors[index] = updatedSavedColors[index - 1];
+    updatedSavedColors[index - 1] = itemToMove;
+    localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
+    this.setState({ savedColors: updatedSavedColors });
+  }
+
+  handleMoveRight = (index) => {
+    const updatedSavedColors = [...this.state.savedColors];
+    const itemToMove = updatedSavedColors[index];
+    updatedSavedColors[index] = updatedSavedColors[index + 1];
+    updatedSavedColors[index + 1] = itemToMove;
+    localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
+    this.setState({ savedColors: updatedSavedColors });
   }
 
   // change background to opposite color 
@@ -172,7 +192,9 @@ class Color extends Component {
           savedColors={this.state.savedColors}
           updateColor={this.changeColors}
           clearSaved={this.handleClearSaved}
-          deleteOneSaved={this.handleDeleteOneSaved} />
+          deleteOneSaved={this.handleDeleteOneSaved}
+          moveLeft={this.handleMoveLeft}
+          moveRight={this.handleMoveRight}/>
       </React.Fragment>
     )
   }
