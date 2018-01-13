@@ -34,13 +34,13 @@ const SavedColors = (props) => {
                 &#060;&#060;
               </p> 
               : <a>&#32;</a>}
-            <a onClick={props.showDelPopup}>(del)</a>
+            <a onClick={() => props.showDelPopup(i)}>(del)</a>
             <Popup
               show={props.show}
               hide={props.hideDelPopup}>
               <button 
                 style={{width: 100}}
-                onClick={() => props.deleteOneSaved(i)}>
+                onClick={props.deleteOneSaved}>
                 Confirm delete
               </button>
             </Popup>
