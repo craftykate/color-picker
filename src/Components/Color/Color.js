@@ -16,7 +16,8 @@ class Color extends Component {
       colors: {},
       showPicker: false,
       savedColors: savedColors,
-      backgroundColor: "white"
+      backgroundColor: "white",
+      hoverState: ""
     }
   }
 
@@ -98,7 +99,10 @@ class Color extends Component {
     updatedSavedColors[index] = updatedSavedColors[index - 1];
     updatedSavedColors[index - 1] = itemToMove;
     localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
-    this.setState({ savedColors: updatedSavedColors });
+    this.setState({ 
+      savedColors: updatedSavedColors,
+      hoverState: ""
+    });
   }
 
   handleMoveRight = (index) => {
@@ -107,7 +111,10 @@ class Color extends Component {
     updatedSavedColors[index] = updatedSavedColors[index + 1];
     updatedSavedColors[index + 1] = itemToMove;
     localStorage.setItem('savedColors', JSON.stringify(updatedSavedColors));
-    this.setState({ savedColors: updatedSavedColors });
+    this.setState({ 
+      savedColors: updatedSavedColors,
+      hoverState: ""
+    });
   }
 
   // change background to opposite color 
@@ -118,6 +125,22 @@ class Color extends Component {
       return {
         backgroundColor: newColor
       }
+    })
+  }
+
+  // gets rid of "sticky" hover state on mobile devices after clicking link
+  // add hover class when hovering, remove it when mouse leaves
+  handleAddHoverClass = (savedColorIndex, direction) => {
+    this.setState((prevState, props) => {
+      const newState = prevState.hoverState === "" ? [savedColorIndex, direction] : ""
+      return {
+        hoverState: newState
+      }
+    })
+  }
+  handleRemoveHoverClass = () => {
+    this.setState({
+      hoverState: ""
     })
   }
 
@@ -194,7 +217,10 @@ class Color extends Component {
           clearSaved={this.handleClearSaved}
           deleteOneSaved={this.handleDeleteOneSaved}
           moveLeft={this.handleMoveLeft}
-          moveRight={this.handleMoveRight}/>
+          moveRight={this.handleMoveRight}
+          addHoverClass={this.handleAddHoverClass}
+          removeHoverClass={this.handleRemoveHoverClass}
+          hover={this.state.hoverState}/>
       </React.Fragment>
     )
   }

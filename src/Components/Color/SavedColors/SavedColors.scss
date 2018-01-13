@@ -39,6 +39,13 @@
           display: flex;
           justify-content: space-between;
           margin-top: 10px;
+          p {
+            color: $accent;
+            cursor: pointer;
+          }
+          .hover {
+            color: $main;
+          }
         }
       }
     }
