@@ -2,7 +2,7 @@
 
 A sweet little tool for finding several different color combinations - complimentary, split complimentary, triad, analogous and square combinations.
 
-See it live at [kates-color-picker.surge.sh](http://kates-color-picker.surge.sh/)
+See it live at [katescolorpicker.surge.sh](http://katescolorpicker.surge.sh/)
 
 ![](./public/app.jpg)
 
