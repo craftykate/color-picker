@@ -7,7 +7,7 @@ const Footer = () => (
       Hover over a color to get hex and rgb codes. <br/>
       Click on any color to set that as the main color. <br/>
       Click (save) to save color. <br />
-      Your browser will remember your saved colors and will load your last saved color next time you visit<br/>
+      Your browser will remember your saved colors and will load your first saved color next time you visit<br/>
       Optimized for mobile! Scroll down while picking a color to see different color combos
     </p> 
     <p style={{fontSize: '80%', fontStyle: 'italic'}}>

@@ -25,7 +25,7 @@ class Color extends Component {
 
   // set state.colors when starting
   componentWillMount() {
-    const loadColor = this.state.savedColors.length > 0 ? this.state.savedColors[this.state.savedColors.length - 1] : '#5ED5FF'
+    const loadColor = this.state.savedColors.length > 0 ? this.state.savedColors[0] : '#5ED5FF'
     this.changeColors(loadColor);
   }
 
